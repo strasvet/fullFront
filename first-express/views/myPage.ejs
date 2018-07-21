@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Welcome to our page! Client!!!</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <nav>
+            <% if(isAuthenticated) { %>
+            <a href="addPhoto.html">Add photo</a><br>
+            <a href="/logout">LogOut</a>
+            <%}  else { %>
+            <a href="login.html">Login</a><br>
+            <a href="register.html">Register</a>
+            <% }  %>
+
+
+        </nav>
+        <h1>Hello, </h1>
+        <p class="success"><%= messages.success %></p>
+        <label>Album <select id="albumSelects"></select></label>
+        <p id="photos"></p>
+
+        <script src="http://code.jquery.com/jquery-3.3.1.js"></script>
+        <script src="album.js"></script>
+        <script src="listFile.js"></script>
+    </body>
+</html>

@@ -1,0 +1,21 @@
+label {
+    width: 5em;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+button {
+    margin-left: 20em;
+}
+form {
+    width: 400px;
+    border: 1px solid black;
+}
+
+
+.error {
+    color: red;
+}
+
+.success {
+    color: green;
+}

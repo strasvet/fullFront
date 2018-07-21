@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Register page</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <p class="error"><%= messages.error %></p>
+        <p class="success"><%= messages.success %></p>
+        <form action="register" method="post">
+            <label for="usernameInput">Username</label>
+            <input id="usernameInput" autofocus name="username"><br>
+            <label for="passwordInput">Password</label>
+            <input id="passwordInput" name="password" type="password"><br>
+            <input type="checkbox" onclick="showPass()"><br>
+            <button>Register</button>
+        </form>
+        <script>
+            function showPass() {
+                const pass = document.getElementById("passwordInput");
+                if(pass.type === "password"){
+                    pass.type = "text";
+                } else {
+                    pass.type = "password";
+                }
+            }
+        </script>
+    </body>
+</html>

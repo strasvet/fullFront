@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Add Photo</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <p class="error"><%= messages.error %></p>
+        <form action="/addPhoto" enctype="multipart/form-data" method="post">
+            <label for="albumSelect">Album</label>
+            <select id="albumSelect" autofocus name="album"></select><br>
+            <label for="photoFileInput">Photo</label>
+            <input type="file" name="photo" id="photoFileInput"><br>
+            <button>Add Photo</button>
+        </form>
+        <script src="http://code.jquery.com/jquery-3.3.1.js"></script>
+
+        <!--<script>$.get("/album",a=>$("#albumSelect").html(`<option>${a.join("</option><option>")}</option>`));</script>-->
+
+        <script>
+            const f = v => `<option value="${v.album_id}">${v.album_name}</option>`;
+            $.get("/album",a=>$("#albumSelect").html(`<option/>${a.map(f).join("")}`));
+        </script>
+
+    </body>
+</html>

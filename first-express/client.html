@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Client</title>
+    </head>
+    <body>
+        <script src="http://code.jquery.com/jquery-3.3.1.js"></script>
+
+        <script>
+            const URL = "http://localhost:8000/book";
+
+            const book = {author: "Tolstoy", title: "War And Peace"};
+            const success = v => console.log(v); // to chto vernet s servera
+
+            $.get(URL, book, success);
+            $.post(URL, book, success);
+
+
+            const op = {contentType: "application/json", data: JSON.stringify(book), method: "POST", success};
+            $.ajax(URL, op);
+        </script>
+    </body>
+</html>
