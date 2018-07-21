@@ -62,7 +62,7 @@ app.use((request,response, next)=> {
 
 let users;
 
-mongodb.MongoClient.connect("mongodb://levbase:levbase21@ds139251.mlab.com:39251/levbase", {useNewUrlParser: true}).then(client=>{
+mongodb.MongoClient.connect("mongodb://levbase:levbase@ds139251.mlab.com:39251/levbase", {useNewUrlParser: true}).then(client=>{
     console.log("Connected to mlab MongoDB");
     users = client.db("levbase").collection("users");
 });
